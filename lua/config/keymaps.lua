@@ -1,6 +1,14 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+map('i', '<C-v>', '<C-r>+', { desc = "paste on insert mode", noremap = true, silent = true })
+map('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = "clean search" })
+
+map("n", "<C-/>", "gcc", { remap = true, desc = "Toggle comment line" })
+map("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment line" })
+map("v", "<C-/>", "gc", { remap = true, desc = "Toggle comment selection" })
+map("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
+
 map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>a", opts)
 map("n", "<leader>bd", "<cmd>bd!<CR>", opts)
