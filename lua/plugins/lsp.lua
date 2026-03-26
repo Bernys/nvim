@@ -22,26 +22,19 @@ return {
 				float = { focusable = false, border = "rounded", source = true, max_width = 80 },
 			})
 
-			-- Configurar los atajos SOLO cuando un servidor LSP se conecta al archivo
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
-					local opts = { buffer = ev.buf, silent = true }
+					local map = function(mode, lhs, rhs, desc)
+						vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, silent = true, desc = "LSP: " .. desc })
+					end
 
-					opts.desc = "Go to definition"
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-
-					opts.desc = "Watch referencias"
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-
-					opts.desc = "Rename"
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-					opts.desc = "See documentation"
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-					opts.desc = "Code action"
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+					map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+					map("n", "gr", vim.lsp.buf.references, "Watch references")
+					map("n", "gl", vim.diagnostic.open_float, "Watch full alert")
+					map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
+					map("n", "K", vim.lsp.buf.hover, "See documentation")
+					map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
 				end,
 			})
 		end,
