@@ -14,7 +14,7 @@ return {
 				persist_size = true,
 				direction = "horizontal", -- Opciones: 'vertical', 'horizontal', 'tab', 'float'
 				close_on_exit = true,
-				shell = vim.o.shell,  -- Here is the terminal that u usually use
+				shell = "fish",       -- Here is the terminal that u usually use
 				float_opts = {
 					border = "curved",
 				},
