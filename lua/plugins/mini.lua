@@ -1,11 +1,19 @@
 return {
 	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup({})
+		end,
+		priority = 1000,
+	},
+
+	{
 		"nvim-mini/mini.nvim",
 		version = false,
 		config = function()
 			require("mini.pairs").setup()
 			require("mini.surround").setup()
-			require("mini.icons").setup()
+			-- require("mini.icons").setup()
 			require("mini.files").setup({})
 			require("mini.comment").setup()
 			require("mini.tabline").setup()
