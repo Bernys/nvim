@@ -10,11 +10,14 @@ return {
 		"j-hui/fidget.nvim",
 	},
 	{
+		"tpope/vim-surround"
+	},
+	{
 		"nvim-mini/mini.nvim",
 		version = false,
 		config = function()
 			require("mini.pairs").setup()
-			require("mini.surround").setup()
+			-- require("mini.surround").setup()
 			-- require("mini.icons").setup()
 			require("mini.files").setup({})
 			require("mini.comment").setup()

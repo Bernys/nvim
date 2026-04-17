@@ -12,7 +12,7 @@ map("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment selection" })
 map("n", "<C-s>", ":w<CR>", opts)
 map("i", "<C-s>", "<Esc>:w<CR>a", opts)
 map("n", "<leader>bd", "<cmd>bd!<CR>", opts)
-map("n", "<C-w>", "<cmd>bd!<CR>", opts)
+map('n', '<leader>x', ':bd<CR>', { desc = 'Close current buffer' })
 
 map("n", "<leader>_", "<C-w>s", { desc = "Split Window Below" })
 map("n", "<leader>|", "<C-w>v", { desc = "Split Window Right" })

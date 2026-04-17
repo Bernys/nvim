@@ -57,19 +57,15 @@ return {
 			})
 
 			require("telescope").load_extension("fzf")
-			require("telescope").load_extension("zoxide")
+			--
 			-- telescope setup
-			local builtin = require("telescope.builtin")
+			local builtin = require('telescope.builtin')
 
-			vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
-			vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<cr>", {})
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+			vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+			vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+			vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+			vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
-			vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols, {})
-			vim.keymap.set("n", "<leader>ws", builtin.lsp_workspace_symbols, {})
-			vim.keymap.set("n", "<leader>fz", ":Telescope zoxide list<CR>", {})
-			vim.keymap.set("n", "<leader>fv", builtin.help_tags, {})
-			vim.keymap.set("n", "<leader>fp", builtin.builtin, {})
 
 			vim.keymap.set(
 				"n",
