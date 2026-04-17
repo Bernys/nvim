@@ -6,7 +6,9 @@ return {
 		end,
 		priority = 1000,
 	},
-
+	{
+		"j-hui/fidget.nvim",
+	},
 	{
 		"nvim-mini/mini.nvim",
 		version = false,
