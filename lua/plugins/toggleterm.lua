@@ -9,7 +9,7 @@ return {
 				hide_numbers = true,
 				shade_terminals = true,
 				shading_factor = 2,
-				start_in_insert = true,
+				start_in_insert = false,
 				insert_mappings = true,
 				persist_size = true,
 				direction = "horizontal", -- Opciones: 'vertical', 'horizontal', 'tab', 'float'
@@ -19,6 +19,7 @@ return {
 					border = "curved",
 				},
 			})
+			vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 		end,
 	},
 }

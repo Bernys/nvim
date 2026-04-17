@@ -1,8 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		-- branch = "0.1.x",
+		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{
@@ -57,7 +56,7 @@ return {
 				},
 			})
 
-			-- require("telescope").load_extension("fzf")
+			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("zoxide")
 			-- telescope setup
 			local builtin = require("telescope.builtin")
