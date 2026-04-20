@@ -7,9 +7,6 @@ return {
 		priority = 1000,
 	},
 	{
-		"j-hui/fidget.nvim",
-	},
-	{
 		"tpope/vim-surround"
 	},
 	{
@@ -19,7 +16,9 @@ return {
 			require("mini.pairs").setup()
 			-- require("mini.surround").setup()
 			-- require("mini.icons").setup()
-			require("mini.files").setup({})
+			require("mini.cursorword").setup()
+			require("mini.notify").setup()
+			require("mini.files").setup()
 			require("mini.comment").setup()
 			require("mini.tabline").setup()
 			require("mini.move").setup()
