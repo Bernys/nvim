@@ -5,6 +5,7 @@ local opt = vim.opt
 opt.clipboard = "unnamedplus"
 opt.number = true
 opt.relativenumber = true
+opt.colorcolumn = "110"
 
 opt.termguicolors = true
 opt.shiftwidth = 2
