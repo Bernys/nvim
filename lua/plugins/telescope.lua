@@ -60,15 +60,16 @@ return {
 			--
 			-- telescope setup
 			local builtin = require('telescope.builtin')
+			local map = vim.keymap.set
 
-			vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-			vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-			vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-			vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {})
-			vim.keymap.set("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", { desc = 'Telescope watch references' })
+			map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+			map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+			map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+			map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+			map("n", "<leader>fd", builtin.diagnostics, {})
+			map("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>", { desc = 'Telescope watch references' })
 
-			vim.keymap.set(
+			map(
 				"n",
 				"<leader>jk",
 				"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",

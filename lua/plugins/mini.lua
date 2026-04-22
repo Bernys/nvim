@@ -1,21 +1,9 @@
 return {
 	{
-		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("nvim-web-devicons").setup({})
-		end,
-		priority = 1000,
-	},
-	{
-		"tpope/vim-surround"
-	},
-	{
 		"nvim-mini/mini.nvim",
 		version = false,
 		config = function()
 			require("mini.pairs").setup()
-			-- require("mini.surround").setup()
-			-- require("mini.icons").setup()
 			require("mini.cursorword").setup()
 			require("mini.notify").setup()
 			require("mini.files").setup()

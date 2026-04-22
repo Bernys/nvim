@@ -32,6 +32,7 @@ return {
 			"css",
 			"javascript",
 			"typescript",
+			"tsx",
 			"haskell",
 			"zig",
 			"gleam",
