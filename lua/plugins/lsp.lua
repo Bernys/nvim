@@ -41,7 +41,7 @@ return {
 
 					map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 					map("n", "gr", vim.lsp.buf.references, "Watch references")
-					map("n", "gl", vim.diagnostic.open_float, "Watch full alert")
+					map("n", "gl", function() vim.diagnostic.open_float({ focusable = true }) end, "Watch full alert")
 					map("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
 					map("n", "K", vim.lsp.buf.hover, "See documentation")
 					map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
